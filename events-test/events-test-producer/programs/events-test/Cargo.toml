@@ -1,0 +1,20 @@
+[package]
+name = "events-test"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "events_test"
+
+[features]
+no-entrypoint = []
+no-idl = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "0.11.1"
+anchor-spl = "0.11.1"
+serum_dex = { version = "0.4.0", git = "https://github.com/project-serum/serum-dex.git", features=["no-entrypoint", "program"] }

@@ -1,0 +1,73 @@
+{
+  "version": "0.0.0",
+  "name": "events_test",
+  "instructions": [
+    {
+      "name": "initialize",
+      "accounts": [
+        {
+          "name": "stoplossState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "ownAddress",
+          "type": "publicKey"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "StoplossState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "ownAddress",
+            "type": "publicKey"
+          }
+        ]
+      }
+    }
+  ],
+  "types": [
+    {
+      "name": "OrdStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "New"
+          }
+        ]
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "StoplossOrderUpdate",
+      "fields": [
+        {
+          "name": "ownAddress",
+          "type": "publicKey",
+          "index": false
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 300,
+      "name": "SomeErr",
+      "msg": "Error"
+    }
+  ]
+}
